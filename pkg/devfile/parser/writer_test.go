@@ -15,6 +15,7 @@ func TestWriteYamlDevfile(t *testing.T) {
 	var (
 		schemaVersion = "2.0.0"
 		testName      = "TestName"
+		displayName   = "DisplayName"
 	)
 
 	t.Run("write yaml devfile", func(t *testing.T) {
@@ -30,7 +31,9 @@ func TestWriteYamlDevfile(t *testing.T) {
 					DevfileHeader: devfilepkg.DevfileHeader{
 						SchemaVersion: schemaVersion,
 						Metadata: devfilepkg.DevfileMetadata{
-							Name: testName,
+							Version:     "1.0.1",
+							Name:        testName,
+							DisplayName: displayName,
 						},
 					},
 				},
